@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 222082787}
   - component: {fileID: 222082788}
   - component: {fileID: 222082789}
+  - component: {fileID: 222082791}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -237,8 +238,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.5
+  m_AngularDrag: 15
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -285,7 +286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222082786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.196365, y: 2.9932122, z: 0}
+  m_LocalPosition: {x: 31.946365, y: 2.9932122, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2116860454}
@@ -293,6 +294,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &222082791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222082786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4a8e91424084248897e248889a6bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torqueAmount: 1.6
 --- !u!1 &304804837
 GameObject:
   m_ObjectHideFlags: 3
@@ -520,7 +534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.093662, y: 2.9932122, z: -10}
+  m_LocalPosition: {x: 36.843662, y: 2.9932122, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1175,7 +1189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968605153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.093662, y: 2.9932122, z: -10}
+  m_LocalPosition: {x: 36.843662, y: 2.9932122, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 304804838}
