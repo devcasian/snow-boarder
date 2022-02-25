@@ -18,12 +18,11 @@ public class PlayerController : MonoBehaviour
         _surfaceEffector2D = FindObjectOfType<SurfaceEffector2D>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!_canMove) return;
 
-        RotatePlayer();
-        AddBoostAndSlow();
+        PlayerMovement();
     }
 
     public void DisableControls()
@@ -31,7 +30,7 @@ public class PlayerController : MonoBehaviour
         _canMove = false;
     }
 
-    private void RotatePlayer()
+    private void PlayerMovement()
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -41,11 +40,7 @@ public class PlayerController : MonoBehaviour
         {
             _rb.AddTorque(-torqueAmount);
         }
-    }
-
-    private void AddBoostAndSlow()
-    {
-        if (Input.GetKey(KeyCode.UpArrow))
+        else if (Input.GetKey(KeyCode.UpArrow))
         {
             _surfaceEffector2D.speed = boostSpeed;
         }
