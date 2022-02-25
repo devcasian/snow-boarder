@@ -5,12 +5,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float torqueAmount;
     [SerializeField] private float boostSpeed;
     [SerializeField] private float slowSpeed;
-
     [SerializeField] private float baseSpeed;
-    // private const float ConstSpeed = 2f;
 
     private Rigidbody2D _rb;
     private SurfaceEffector2D _surfaceEffector2D;
+
+    private bool _canMove = true;
 
     private void Start()
     {
@@ -20,8 +20,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (!_canMove) return;
+
         RotatePlayer();
         AddBoostAndSlow();
+    }
+
+    public void DisableControls()
+    {
+        _canMove = false;
     }
 
     private void RotatePlayer()

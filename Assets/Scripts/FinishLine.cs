@@ -8,16 +8,21 @@ public class FinishLine : MonoBehaviour
 
     [Header("Particle System Settings")] 
     [SerializeField] private ParticleSystem finishEffect;
-    
+
+    private bool _hasPlayed;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Player"))
+        if (!col.CompareTag("Player")) return;
+
+        if (!_hasPlayed)
         {
-            finishEffect.Play();
             GetComponent<AudioSource>().Play();
-            Invoke(nameof(ReloadScene), delayAfterFinish);
+            _hasPlayed = true;
         }
+
+        finishEffect.Play();
+        Invoke(nameof(ReloadScene), delayAfterFinish);
     }
 
     private void ReloadScene()
